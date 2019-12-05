@@ -4,10 +4,15 @@ import API from '../adaptors/API'
 class RandomName extends React.Component {
 
 state = {
-    name: ''
+    name: '', 
+    gender: 'f',
+    usage: 'eng'
 }
 
-handleClick=()=> console.log('clicking')
+handleClick=()=> {
+    console.log('clicking')
+    API.randomName().then(name => this.setState({name: name['names'][0]}))
+}
 
 
     render(){

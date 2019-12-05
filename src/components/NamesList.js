@@ -15,14 +15,15 @@ class NamesList extends React.Component {
     }
 
 
+
     render(){
         return <div> 
             <strong>This is NamesList</strong>
-            {this.state.names.map(name => <NamesTile key={name.id} name={name}/>)}
+            {/* {this.state.names.map(name => <NamesTile key={name.id} name={name}/>)} */}
             <strong>This is NamesList (female)</strong>
-            {this.state.names.filter(name=> name.gender === 'f').map(name => <NamesTile key={name.id} name={name}/>)}
+            {/* {this.state.names.filter(name=> name.gender === 'f').map(name => <NamesTile key={name.id} name={name}/>)} */}
             <strong>This is NamesList (male)</strong>
-            {this.state.names.filter(name=> name.gender === 'm').map(name => <NamesTile key={name.id} name={name}/>)}  
+            {/* {this.state.names.filter(name=> name.gender === 'm').map(name => <NamesTile key={name.id} name={name}/>)}   */}
         </div>
     }
 
