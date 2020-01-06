@@ -7,19 +7,28 @@ state = {
     name: ''
 }
 
-handleClick=()=> {
-    console.log('clicking')
-    API.randomName().then(name => this.setState({ name }))
-    // API.randomName().then(name => console.log(name.name) ) 
+handleRandomClick=()=> API.randomName().then(name => this.setState({ name }))
+
+handleClick=(YorN) => YorN === 'Y' ? console.log(`you like the name ${this.state.name.name}`) : console.log(`you do not like the name ${this.state.name.name}`)
+
+
+handleKey=(e)=>{
+    e.keyCode === 13 && this.handleRandomClick()
+    e.keyCode === 39 && this.handleClick('Y')
+    e.keyCode === 37 && this.handleClick('N')
 }
 
 
-    render(){
+render(){
+    document.addEventListener('keydown', this.handleKey)
         return <div>
             <strong>This is RandomName</strong><br></br>
-            <button onClick={this.handleClick}>Click for random name</button> <br></br>
-            {this.state.name.name}<br></br>
-            Swipe right for yes, and left for no
+            
+            <button onClick={this.handleRandomClick}>Click for random name</button> <br></br>
+            <h1>{this.state.name.name}</h1>
+            <button onClick={() => this.handleClick('N')}>No</button>
+            <button onClick={() => this.handleClick('Y')}>Yes</button>
+            
         </div>
     }
 
