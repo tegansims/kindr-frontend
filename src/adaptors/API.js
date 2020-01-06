@@ -2,7 +2,7 @@ const baseUrl = 'http://localhost:3000/'
 
 const namesUrl = baseUrl + 'names'
 const nameUrl = baseUrl + 'names/create'
-const randomNameUrl = baseUrl + 'names/random'
+const randomNameUrl = baseUrl + 'random'
 
 const get = url => 
     fetch(url, {
@@ -24,7 +24,7 @@ fetch(url, {
 
 
 const names = () => get(namesUrl)
-const randomName = (gender, usage) => post(randomNameUrl)
+const randomName = () => get(randomNameUrl)
 
 
 export default { names, randomName }
