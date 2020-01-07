@@ -1,5 +1,7 @@
 import React from 'react';
 import API from '../adaptors/API'
+import Button from '@material-ui/core/Button';
+
 
 class RandomName extends React.Component {
 
@@ -24,7 +26,7 @@ render(){
         return <div>
             <strong>This is RandomName</strong><br></br>
             
-            <button onClick={this.handleRandomClick}>Click for random name</button> <br></br>
+            <Button variant="contained" color="primary" onClick={this.handleRandomClick}>Click for random name</Button> <br></br>
             <h1>{this.state.name.name}</h1>
             <button onClick={() => this.handleClick('N')}>No</button>
             <button onClick={() => this.handleClick('Y')}>Yes</button>
